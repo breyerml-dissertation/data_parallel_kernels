@@ -43,7 +43,7 @@ int main() {
 
             loc[idx] = d_res[idx];
             // explicit barrier
-            sycl::group_barrier(item.get_group());
+            item.barrier();
             d_res[idx] = loc[priv];
         });
     });
