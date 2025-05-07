@@ -24,6 +24,8 @@ elseif (EXAMPLE_SYCL_IMPLEMENTATION STREQUAL "acpp")
     # set AdaptiveCpp targets of not already done
     if (NOT ACPP_TARGETS)
         message(FATAL_ERROR "Please manually set the ACPP_TARGETS!")
+    elseif (ACPP_TARGETS MATCHES "generic")
+        message(FATAL_ERROR "ACPP_TARGETS=\"generic\" does not support the hierarchical data parallel kernels!")
     endif ()
     find_package(AdaptiveCpp CONFIG REQUIRED)
     # use AdaptiveCpp

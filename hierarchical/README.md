@@ -40,7 +40,7 @@ The target device, `cpu` or `gpu`, can be switched using the `EXAMPLE_SYCL_OFFLO
 
 The AdaptiveCpp target must be set using the `ACPP_TARGETS` option:
 
-- JIT compile for the respective target at runtime (recommended): `-DACPP_TARGETS=generic`
+- JIT compile for the respective target at runtime (recommended): **not supported**
 - CPUs: `-DACPP_TARGETS=omp`
 - NVIDIA GPUs: `-DACPP_TARGETS=cuda:sm_80`
 - AMD GPUs: `-DACPP_TARGETS=hip:gfx90a`
