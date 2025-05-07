@@ -44,11 +44,11 @@ int main() {
                                          sycl::distribute_items_and_wait(g, [&](::sycl::s_item<1> item) {
                                              idx(item) = g[0] * g.get_logical_local_range(0) + item.get_local_id(g, 0);
                                              priv(item) = N - idx(item) - 1;
-                                             loc[idx(item)] = res[idx(item)];
+                                             loc[idx(item)] = d_res[idx(item)];
                                          });
                                          // barrier due to *_and_wait
                                          sycl::distribute_items_and_wait(g, [&](::sycl::s_item<1> item) {
-                                             res[idx(item)] = loc[priv(item)];
+                                             d_res[idx(item)] = loc[priv(item)];
                                          });
                                      });
         });
