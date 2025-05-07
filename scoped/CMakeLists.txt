@@ -15,7 +15,7 @@ set(EXAMPLE_SYCL_IMPLEMENTATION "" CACHE STRING "Set the SYCL implementation tha
 if (EXAMPLE_SYCL_IMPLEMENTATION STREQUAL "icpx" OR EXAMPLE_SYCL_IMPLEMENTATION STREQUAL "dpcpp")
     message(FATAL_ERROR "icpx does not support AdaptiveCpp's scoped parallelism extension!")
 elseif (EXAMPLE_SYCL_IMPLEMENTATION STREQUAL "acpp")
-    # set AdaptiveCpp targets of not already done
+    # AdaptiveCpp targets must be manually set
     if (NOT ACPP_TARGETS)
         message(FATAL_ERROR "Please manually set the ACPP_TARGETS!")
     elseif (ACPP_TARGETS MATCHES "generic")

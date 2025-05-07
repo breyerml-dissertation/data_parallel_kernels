@@ -21,7 +21,7 @@ if (EXAMPLE_SYCL_IMPLEMENTATION STREQUAL "icpx" OR EXAMPLE_SYCL_IMPLEMENTATION S
     target_compile_options(work_group_reverse PRIVATE -sycl-std=2020 -fsycl)
     target_link_options(work_group_reverse PRIVATE -fsycl)
 elseif (EXAMPLE_SYCL_IMPLEMENTATION STREQUAL "acpp")
-    # set AdaptiveCpp targets of not already done
+    # AdaptiveCpp targets must be manually set
     if (NOT ACPP_TARGETS)
         message(FATAL_ERROR "Please manually set the ACPP_TARGETS!")
     endif ()
