@@ -48,7 +48,7 @@ int main() {
     });
 
     // copy data to the host
-    q.copy(d_res, res.data(), N);
+    q.copy(d_res, res.data(), N).wait();
     // free the resources
     sycl::free(d_res, q);
     sycl::free(d_global, q);
